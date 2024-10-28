@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>비밀번호 인증 페이지</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+        .container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        input {
+            padding: 10px;
+            margin-top: 10px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        button {
+            padding: 10px;
+            margin-top: 10px;
+            width: 100%;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+    <script>
+        function checkPassword() {
+            var password = document.getElementById("password").value;
+            var correctPassword = "1234"; // 올바른 비밀번호
+
+            if (password === correctPassword) {
+                window.location.href = "https://photonics.postech.ac.kr/"; // 인증 성공 시 이동할 페이지
+            } else {
+                alert("출입금지: 잘못된 비밀번호입니다.");
+                window.location.href = "http://www.naver.com"; // 실패 시 이동할 페이지
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h2>비밀번호를 입력하세요</h2>
+        <input type="password" id="password" placeholder="비밀번호 입력">
+        <button onclick="checkPassword()">제출</button>
+    </div>
+</body>
+</html>
